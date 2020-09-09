@@ -8,7 +8,7 @@ const SelectDropdown = ({ handleSelectByRegion, darkMode }) => {
       <select
         name="regions"
         onChange={handleSelectByRegion}
-        className={`block appearance-none w-full bg-white  hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none ${
+        className={`block appearance-none w-full bg-white text-gray-500 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none ${
           darkMode ? "bg-darkBlue" : null
         }`}
       >

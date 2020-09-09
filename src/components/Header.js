@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import MoonIcon from "./icons/MoonIcon";
+import SunIcon from "./icons/SunIcon";
 
 const Header = ({ toggleDarkMode, darkMode }) => {
   return (
@@ -13,9 +14,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
         Where in the world?
       </Link>
       <div className="flex" onClick={toggleDarkMode} role="button">
-        <span className="mr-2">
-          <MoonIcon />
-        </span>
+        <span className="mr-2">{darkMode ? <SunIcon /> : <MoonIcon />}</span>
         <p className="">Dark Mode</p>
       </div>
     </header>
