@@ -1,11 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MoonIcon from "./icons/MoonIcon";
 
-const Header = () => {
+const Header = ({ toggleDarkMode, darkMode }) => {
   return (
-    <header className="bg-primaryWhite  flex justify-between px-8 py-6  shadow">
-      <p className="font-bold text-xl">Where in the world?</p>
-      <div className="flex" role="button">
+    <header
+      className={`bg-primaryWhite  flex justify-between px-8 py-6 shadow ${
+        darkMode ? "bg-darkBlue" : null
+      }`}
+    >
+      <Link className="font-bold text-xl" to="/">
+        Where in the world?
+      </Link>
+      <div className="flex" onClick={toggleDarkMode} role="button">
         <span className="mr-2">
           <MoonIcon />
         </span>

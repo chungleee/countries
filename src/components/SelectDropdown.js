@@ -1,6 +1,6 @@
 import React from "react";
 
-const SelectDropdown = ({ handleSelectByRegion }) => {
+const SelectDropdown = ({ handleSelectByRegion, darkMode }) => {
   let regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   return (
@@ -8,7 +8,9 @@ const SelectDropdown = ({ handleSelectByRegion }) => {
       <select
         name="regions"
         onChange={handleSelectByRegion}
-        className="block appearance-none w-full bg-white  hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none"
+        className={`block appearance-none w-full bg-white  hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none ${
+          darkMode ? "bg-darkBlue" : null
+        }`}
       >
         <option value="">Filter by region</option>
         {regions.map((region) => {

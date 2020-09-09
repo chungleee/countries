@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LeftArrowIcon from "./icons/LeftArrowIcon";
 import ky from "ky";
 
-const CountryPage = ({ location }) => {
+const CountryPage = ({ location, darkMode }) => {
   let code = location.state.alpha3Code;
   const [country, setCountry] = useState({});
   const [borderCountries, setBorderCountries] = useState([]);
@@ -57,7 +57,9 @@ const CountryPage = ({ location }) => {
   return (
     <div className="pt-8">
       <Link
-        className="bg-white border-solid inline-flex mb-8 px-6 py-4 shadow"
+        className={`bg-white border-solid inline-flex mb-8 px-6 py-4 shadow ${
+          darkMode ? "bg-darkBlue" : null
+        }`}
         to="/"
       >
         <span className="mr-3">
@@ -127,7 +129,11 @@ const CountryPage = ({ location }) => {
                   ) : (
                     borderCountries.map((country) => {
                       return (
-                        <li className="bg-white font-normal mr-4 mb-4 px-4 py-2 shadow">
+                        <li
+                          className={`bg-white font-normal mr-4 mb-4 px-4 py-2 shadow ${
+                            darkMode ? "bg-darkBlue" : null
+                          }`}
+                        >
                           <Link
                             to={{
                               pathname: `/country/${country.name}`,

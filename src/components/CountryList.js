@@ -6,7 +6,7 @@ import { nanoid } from "nanoid";
 import SearchBar from "./SearchBar";
 import SelectDropdown from "./SelectDropdown";
 
-const CountryList = () => {
+const CountryList = ({ darkMode }) => {
   const [countries, setCountries] = useState([]);
   const [value, setValue] = useState("");
   const [region, setRegion] = useState("");
@@ -34,8 +34,11 @@ const CountryList = () => {
   return (
     <div>
       <div className="pt-6 md:flex md:justify-between">
-        <SearchBar handleInputValue={handleInputValue} />
-        <SelectDropdown handleSelectByRegion={handleSelectByRegion} />
+        <SearchBar darkMode={darkMode} handleInputValue={handleInputValue} />
+        <SelectDropdown
+          darkMode={darkMode}
+          handleSelectByRegion={handleSelectByRegion}
+        />
       </div>
       <div className="pb-4 pt-4 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-4">
         {!countries.length ? (
@@ -64,6 +67,7 @@ const CountryList = () => {
                   }}
                 >
                   <CountryCard
+                    darkMode={darkMode}
                     capital={country.capital}
                     flag={country.flag}
                     name={country.name}

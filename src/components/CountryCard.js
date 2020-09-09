@@ -1,8 +1,12 @@
 import React from "react";
 
-const CountryCard = ({ capital, flag, name, population, region }) => {
+const CountryCard = ({ capital, flag, name, population, region, darkMode }) => {
   return (
-    <div className="bg-primaryWhite mb-4 rounded shadow">
+    <div
+      className={`bg-primaryWhite mb-4 rounded shadow ${
+        darkMode ? "bg-darkBlue" : null
+      }`}
+    >
       <div className="bg-red-500 relative pb-1/2">
         <img
           className="absolute h-full w-full object-cover"
